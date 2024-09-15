@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Tienda</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{/css/estilo_index.css}">
+  <link rel="stylesheet" th:href="@{/css/estilo_comp.css}">
+  <!--CSS externo-->
+  <link rel="stylesheet" th:href="@{/css/css_externo.css}">
+</head>
+
+<body>
+  <div id="particles-js"></div>
+  <div id="envolturaP">
+    <!--Acá va barra de navegación, banner y logo-->
+    <section id="barraSuperior">
+      <div id="barraSuperiorIzq">
+        <a th:href="@{/web/index}"><img id="imgLogo" src="../images/logo.png" height="40px"></a>
+        <button class="btn_sin_fondo" id="btn_menu"><img th:src="@{/images/menu.png}" class="img_arriba"></button>
+        <a class="btn_sin_fondo" href="/web/carrito"><img th:src="@{/images/carrito.png}" class="img_arriba"></a>
+
+        <form action="/web/escojer" method="POST" style="display: inline;">
+          <input type="text" id="inputBusqueda" placeholder="¿Buscas un Producto?" name="buscar"th:value="${buscar}">
+          <input type="submit" value="Buscar" id="btn_buscar">
+        </form>
+      </div>
+      <div id="barraSuperiorDer">
+        <div id="barraSuperiorDerLogin">
+          <a class="btn_sin_fondo2" href="/web/login"><img th:src="@{/images/login.png}" class="img_arriba"></a>
+          <p th:text="${nombre}" class="h1_normal" style="color: aliceblue;"></p>
+        </div>
+        <!--<form action="/cli/cerrar-session">-->
+          <button class="btn_sin_fondo"><img th:src="@{/images/salir.png}" class="img_arriba" onclick="cerrarSession()"></button>
+        <!--</form>-->
+      </div>
+    </section>
+  </div>
+  <br><br><br>
+  <!--mi contenido Principal-->
+  <main id="contenidoPrincipal">
+
+    <header class="main_header">
+      <div class="container-title">
+        <h1 class="typewritter-title">
+          <span class="primary_title">Ventas en</span>
+          <span class="secondary_title"></span>
+        </h1>
+        <h2 class="typewritter_subtitle">¡Encuentra todo lo que buscas!</h2>
+      </div>
+    </header>
+    <nav class="main_nav">
+      <p>Nav</p>
+    </nav>
+
+    <aside id="main_aside">
+      <h2 class="h1_normal">Categorias</h2>
+      <div th:each="c:${categorias}">
+        <button class="btn_animacion"><a th:href="@{/web/categoria/{cat_pro}(cat_pro=${c})}" th:text="${c}" class="a_normal"></a></button>
+        
+      </div>
+    </aside>
+    <section id="main_section" class="fondo-celeste-blanco">
+      <div class="div_carts">
+        <fieldset class="fieldset_carts" th:each="p:${productos}">
+          <legend class="legend_carts" th:text="${p.getNom_pro()}">Proyecto</legend>
+          <div class="img-container">
+            <img th:src="${p.getUrl_pro()}" class="img_carts_principal">
+          </div>
+
+          <div class="div_project">
+            <p class="p_descripcion" th:text="${'S/.'+p.getPre_pro()}"></p>
+            <p class="p_descripcion" th:text="${'Categoria:'+p.getCat_pro()}"></p>
+          </div>
+          <br>
+          <a th:href="@{/web/agregar/{cod_pro}(cod_pro=${p.getCod_pro()})}" class="btn_normal">Agregar al carrito</a>
+        </fieldset>
+      </div>
+
+    </section>
+    <footer class="main_footer">
+      <p>© 2023 David Abel. Todos los derechos reservados.</p>
+    </footer>
+
+  </main>
+
+  <script th:src="@{/js/script_index.js}"></script>
+  <!--JS externo-->
+  <script th:src="@{/js/js_letras_animadas.js}"></script>
+  <script th:src="@{/js/js_sweetalert2.all.js}"></script>
+  <script th:src="@{/js/js_sweetalert2.all.min.js}"></script>
+
+</body>
+
+</html>

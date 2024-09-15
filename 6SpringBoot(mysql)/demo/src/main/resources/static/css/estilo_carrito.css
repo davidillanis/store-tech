@@ -1,0 +1,22 @@
+#fieldset_main_nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 40%;
+}
+#main_nav_boleta {
+    margin-left: 20px;
+}
+.main_nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5px;
+}
+body{
+    background: radial-gradient(circle, #2343fa, #7b53bd);
+}

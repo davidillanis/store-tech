@@ -1,0 +1,64 @@
+# ______________________________ MySQL Workbench
+#sever config 
+server.port=8083
+
+# Database Configdo
+spring.datasource.url=jdbc:mysql://localhost:3307/prueba1
+spring.datasource.username=root
+spring.datasource.password=dabel
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+#JPA config
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+#dianlecto
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+
+
+
+# ______________________________ PhpMyadmin
+#sever config 
+server.port=8083
+
+#Database Configdo
+spring.datasource.url=jdbc:mysql://localhost:3306/prueba1
+spring.datasource.username=root
+spring.datasource.password=
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+#JPA config
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+#dianlecto
+spring.jpa.database-platform=org.hibernate.dialect.MySQL8Dialect
+
+
+
+# ______________________________ SQL server
+<dependency>
+    <groupId>com.microsoft.sqlserver</groupId>
+    <artifactId>mssql-jdbc</artifactId>
+    <version>9.4.1.jre8</version> <!-- Utiliza la versión más reciente disponible -->
+</dependency>
+
+
+#sever config 
+server.port=8083
+
+# Database Config
+spring.datasource.url=jdbc:sqlserver://localhost:1433;databaseName=prueba1
+spring.datasource.username=root
+spring.datasource.password=1234
+spring.datasource.driver-class-name=com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+# JPA config
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# Dialecto
+spring.jpa.database-platform=org.hibernate.dialect.SQLServerDialect
+
+
+

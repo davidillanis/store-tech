@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo_comp.css">
+    <title>Listar Productos</title>
+</head>
+
+<body class="fondo-azul-violeta">
+    <div class="div_centrado">
+        <h1 class="h1_normal">Listado de Productos</h1>
+        <table class="tabla_normal">
+            <tr>
+                <th>Codigo</th>
+                <th>Categoria</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Stock</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+            </tr>
+            <tr th:each="p : ${productos}">
+                <td th:text="${p.getCod_pro()}"></td>
+                <td th:text="${p.getCat_pro()}"></td>
+                <td th:text="${p.getNom_pro()}"></td>
+                <td th:text="${p.getPre_pro()}"></td>
+                <td th:text="${p.getStock()}"></td>
+                <td><img th:src="${p.getUrl_pro()}" height="50px"></td>
+                <td>
+                    <a th:href="@{/pro/editar/{cod_pro}(cod_pro=${p.getCod_pro()})}"
+                        class="btn_normal fondo-rojo">Editar</a>
+                    <a th:href="@{/pro/eliminar/{cod_pro}(cod_pro=${p.getCod_pro()})}"
+                        class="btn_normal fondo-rojo">Eliminar</a>
+                </td>
+            </tr>
+        </table>
+        <br><br>
+        <a href="/pro/nuebo" class="btn_normal">Nuevo Producto</a>
+        <a href="/web/index" class="btn_normal">Ver Tienda</a>
+    </div>
+</body>
+
+</html>

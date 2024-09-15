@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo_login.css">
+    <link rel="stylesheet" th:href="@{/css/css_externo2.css}">
+    <title>Document</title>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <header></header>
+    <nav></nav>
+    <aside>
+        <div id="div_login">
+            <div id="div_registrar">
+                <h1>Registrarse</h1>
+                <form action="http://localhost/tienda/agregar.php" method="post">
+                    <p><input type="email" name="correo" placeholder="Correo Electronico" required></p>
+                    <p><input type="text" name="nombre" placeholder="Nombre" ></p>
+                    <p><input type="text" name="apellido" placeholder="Apellido"></p>
+                    <p><input type="text" name="dni" placeholder="Dni"></p>
+                    <p><input type="text" name="user" placeholder="Usuario"  required></p>
+                    <p><input type="password" name="pass" placeholder="Contrasenia" required></p>
+                    <input type="submit" value="Registrarse"><br>
+                    <a href="#" id="recuperar_registro">Recuperar Contraseña</a><br>
+                    <a href="#" id="iniciar_sesion_registro">Iniciar Sesion</a><br>
+                    <a href="/web/index">Regresar</a>
+            <!--$jpaCliente->Create(new User($_POST['user'], $_POST['pass'], $_POST['dni'], $_POST['nombre'], $_POST['apellido'], $_POST['correo']));-->
+                </form>
+            </div><br>
+            <div id="div_iniciar_sesion">
+                <h1>Iniciar Sesión</h1>
+                <form th:object="${cliente}" action="/cli/session-post" method="POST">
+                    <p><input type="text" name="user" placeholder="Usuario" th:field="*{user_cli}" required></p>
+                    <p><input type="password" name="password" placeholder="Contrasenia" th:field="*{pass_cli}" required></p>
+                    <input type="submit" value="Iniciar Sesión"><br>
+                    <a href="#" id="recuperar_sesion">Recuperar Contraseña</a><br>
+                    <a href="#" id="registrarse_sesion">Registrarse</a><br>
+                    <a href="/web/index">Regresar</a>
+                </form>
+            </div><br>
+            <div id="div_recuperar">
+                <h1>Recuperar Contraseña</h1>
+                <form action="">
+                    <p><input type="email" name="email" placeholder="Correo Electronico" required></p>
+                    <input type="submit" value="Recuperar Cuenta"><br>
+                    <a href="#" id="registrarse_recuperar">Registrarse</a><br>
+                    <a href="#" id="iniciar_sesion_recuperar">Iniciar Sesion</a><br>
+                    <a href="/web/index">Regresar</a>
+                </form>
+            </div>
+        </div>
+    </aside>
+    <section></section>
+    <footer></footer>
+    
+    <script src="../js/script_login.js"></script>
+    <!--JS externo-->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script th:src="@{/js/js_animacion_fondo.js}"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+.btn_normal{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: 7px;
+    border: none;
+    background-color: rgb(95, 0, 184);
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+.btn_normal:active{
+    background-color: blueviolet;
+}
+.btn_sin_fondo2{
+    background-color: transparent;
+    border: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+.btn_sin_fondo{
+    background-color: transparent;
+    border: none;
+    line-height: 60px;
+    margin-left: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}.btn_sin_fondo:hover{
+    color: blueviolet;
+}.fieldset_normal{
+    border-radius: 5px;
+    border: rgb(108, 117, 125) solid 2px;
+    background-color: rgba(240, 242, 253,0.5);
+}.h1_normal{
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(33, 37, 41);
+    font-weight: bold;
+}.a_normal{
+    color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}.a_normal:hover{
+    color: blueviolet;
+}.btn_animacion{
+    width: 100%;
+    text-align: left;
+    border: none;
+    background-color: transparent;
+    padding: 2px;
+}.btn_animacion:hover{
+    background-color: rgba(0, 250, 0, 0.2);
+}
+.tabla_normal{
+    margin-top: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border-collapse: separate;
+}.tabla_normal, tr, th{
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(33, 37, 41);
+    font-weight: bold;
+    font-size: 18px;
+    border-top: 2px solid rgb(108, 117, 125);
+    border-bottom: 1px solid rgb(108, 117, 125);
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}.tabla_normal, tr, td{
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(69, 10, 255);
+    font-size: 14px;
+    border: none;
+}.tabla_normal, tr, td, input[type='number'] {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: rgb(69, 10, 255);
+    font-weight: bold;
+    padding: 2px;
+}.tabla_normal tr:hover {
+    background-color: rgba(182, 162, 255, 0.6);
+}
+.fondo-rojo{
+    background-color: rgb(220, 53, 69);
+}.fondo-rojo:active{
+    background-color: rgb(250, 53, 69);
+}.fondo-azul{
+    background-color: rgb(59, 43, 210);
+}.fondo-azul:active{
+    background-color: rgb(59, 43, 255);
+}.color-blanco{
+    color: white;
+}
+.div_centrado{
+    width: 70%;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(165, 157, 255, 0.8);
+    border-radius: 20px;
+}.fondo-azul-violeta{
+    background: radial-gradient(circle, #2343fa, #7b53bd);
+}.fondo-celeste-blanco{
+    background: radial-gradient(circle, green, white);
+}.input-text-normal{
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 2px solid rgb(147, 146, 146);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: bold;
+    outline:none;
+}

@@ -1,0 +1,18 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: red; /*obtional*/
+  width: 400px;/*obtional*/
+  height: 400px;/*obtional*/
+}
+.typewritter-title{
+  color: rgb(1, 20, 160);
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.typewritter_subtitle{
+  color: rgb(255, 255, 255);
+  font-family: 'Courier New', Courier, monospace;
+}

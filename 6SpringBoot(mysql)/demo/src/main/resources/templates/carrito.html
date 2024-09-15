@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/estilo_carrito.css">
+    <link rel="stylesheet" href="../css/estilo_comp.css">
+    <title>carrito</title>
+</head>
+
+<body>
+    <nav class="main_nav">
+        <form action="/web/comprar" method="POST">
+            <fieldset id="fieldset_main_nav" class="fieldset_normal">
+                <table class="tabla_normal" id="tabla_productos_comprar">
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                        <th>Total</th>
+                        <th>Acción</th>
+                    </tr>
+                    <tr th:each="p: ${productosAgregados}">
+                        <td th:text="${p.getNom_pro()}"></td>
+                        <td th:text="${p.getPre_pro()}" name="precio" class="precio"></td>
+                        <td>
+                            <input type="number" value="1" style="width: 60px; text-align: center;" min="1"
+                                th:max="${p.getStock()}" name="cantidad" id="cantidad" onchange="actualizarPreciosTotalesTabla(this)">
+                        </td>
+                        <td th:text="${p.getPre_pro()}"></td>
+                        <td><a th:href="@{/web/quitar/{cod_pro}(cod_pro=${p.getCod_pro})}"
+                                class="btn_normal fondo-rojo">Quitar</a>
+                        </td>
+                    </tr>
+                </table>
+                <div id="main_nav_boleta">
+                    <h1 class="h1_normal">SUBTORAL</h1>
+                    <fieldset class="fieldset_normal">
+                        <p class="h1_normal" id="p_subtotal">S/.</p>
+                        <input type="submit" class="btn_normal" value="Comprar">
+                    </fieldset>
+                </div>
+            </fieldset>
+        </form>
+        <br><br>
+        <a href="/web/index" class="btn_normal fondo-azul">Regresar</a>
+    </nav>
+    <script src="../js/script_carrito.js"></script>
+</body>
+
+</html>
